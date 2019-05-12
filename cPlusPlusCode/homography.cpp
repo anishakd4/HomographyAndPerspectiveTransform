@@ -34,9 +34,9 @@ int main(){
     Mat homographyMat2 = findHomography(pts_book2, pts_book1);
 
     //warp book1 to book2
-    warpPerspective(book1, result1, homographyMat1, result1.size());
+    warpPerspective(book1, result1, homographyMat1, book2.size());
     //warp book2 to book1
-    warpPerspective(book2, result2, homographyMat2, result2.size());
+    warpPerspective(book2, result2, homographyMat2, book1.size());
 
     //create windows to show images
     namedWindow("book1", WINDOW_NORMAL);
